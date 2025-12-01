@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>O‘zbekiston Konstitutsiyasi — Ma'lumotlar va Videolar</title>
+  <meta name="description" content="O'zbekiston Konstitutsiyasi: to'liq matn, maqolalar, videolar va animatsiyalar." />
+  <style>
+    /* Oddiy, toza stil — keyin Tailwind yoki Bootstrap bilan almashtirish mumkin */
+    :root{--accent:#0b5cff;--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:#f6f8fb;color:#0b1220;margin:0}
+    header{background:linear-gradient(90deg,#ffffff,#eef6ff);padding:20px;border-bottom:1px solid #e6eef8}
+    .container{max-width:1100px;margin:20px auto;padding:0 16px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
+    .card{background:white;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(13,37,63,.06)}
+    h1{margin:0;font-size:24px}
+    nav{display:flex;gap:12px;margin-top:8px}
+    nav a{color:var(--accent);text-decoration:none;font-weight:600}
+    .search{display:flex;margin:12px 0}
+    .search input{flex:1;padding:10px;border-radius:8px;border:1px solid #dbe7ff}
+    .search button{margin-left:8px;padding:10px 14px;border-radius:8px;border:none;background:var(--accent);color:white}
+    .content{line-height:1.6}
+    .section{margin-bottom:18px}
+    .yt-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:12px}
+    @media(min-width:900px){.yt-grid{grid-template-columns:repeat(1,1fr)}}
+    footer{padding:18px;text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
+    /* Simple highlight animation for hero */
+    .hero{display:flex;gap:18px;align-items:center}
+    .lottie-wrap{width:160px;height:160px}
+    /* small article list */
+    .article{padding:12px;border-radius:8px;border:1px solid #eef3fc;margin-bottom:8px}
+  </style>
+  <!-- Lottie web -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <h1>Oʻzbekiston Konstitutsiyasi</h1>
+          <nav>
+            <a href="#konstitutsiya">Konstitutsiya</a>
+            <a href="#videolar">Videolar</a>
+            <a href="#maqolalar">Maqolalar</a>
+            <a href="#manbalar">Manbalar</a>
+          </nav>
+        </div>
+        <div style="text-align:right">
+          <small>Interaktiv o'quv sayti</small>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <!-- LEFT: Main content -->
+      <section class="card content">
+        <div class="hero section">
+          <div style="flex:1">
+            <h2>Oʻzbekiston Konstitutsiyasi — tezkor kirish</h2>
+            <p>Bu sahifa Konstitutsiyaning toʻliq matni, tushuntirishlar, interaktiv infografikalar va ta'lim videolarini jamlaydi.</p>
+            <div class="search">
+              <input id="q" placeholder="Kalit so'z bilan qidirish: modda, maqola, so'z..." />
+              <button onclick="doSearch()">Qidirish</button>
+            </div>
+          </div>
+          <div class="lottie-wrap" id="lottie"></div>
+        </div>
+
+        <div id="konstitutsiya" class="section">
+          <h3>Rasmiy matn va PDF</h3>
+          <p>Konstitutsiyaning rasmiy elektron versiyasini va PDF-ni quyidagi manba orqali o‘qishingiz mumkin:</p>
+          <ul>
+            <li><a href="https://constitution.uz/en" target="_blank" rel="noopener">constitution.uz — rasmiy elektron versiya</a></li>
+            <li><a href="https://constitution.uz/uploads/constitution_oz.pdf" target="_blank" rel="noopener">Konstitutsiya (PDF)</a></li>
+            <li><a href="https://lex.uz" target="_blank" rel="noopener">lex.uz — qonunchilik portali</a></li>
+          </ul>
+        </div>
+
+        <div id="maqolalar" class="section">
+          <h3>Maqolalar va tushuntirishlar</h3>
+          <div id="articles">
+            <!-- Dynamic content -->
+            <div class="article"><strong>Qonun chiqarish</strong> — Konstitutsiya qanday o'zgartirilishi haqida ma'lumot.</div>
+            <div class="article"><strong>Fuqarolik huquqlari</strong> — Asosiy huquqlar va kafolatlar haqida oddiy tilda sharh.</div>
+            <div class="article"><strong>Bolalar uchun Konstitutsiya</strong> — soddalashtirilgan versiya.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: Sidebar / YouTube panel -->
+      <aside>
+        <div class="card">
+          <h3 id="videolar">YouTube panel — Konstitutsiyaga oid videolar</h3>
+          <p>Quyida rasmiy va ta'lim videolari uchun joy — iframe orqali playlist yoki video qo'yish mumkin.</p>
+
+          <!-- Example: embed a playlist or channel -->
+          <!-- Replace "PLAYLIST_ID" yoki "VIDEO_ID" bilan o'zingiz istaganni qo'ying -->
+          <div style="margin-bottom:12px">
+            <!-- single video example -->
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:8px">
+              <iframe src="https://www.youtube.com/embed/08o41z8iwe4" title="Konstitutsiya - Article 1" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <h4>Boshqa videolar</h4>
+          <div class="yt-grid">
+            <!-- small thumbnails / links to more videos -->
+            <a href="https://www.youtube.com/watch?v=OBuLL1NuF4Y" target="_blank">Konstitutsiya: Bosh qism — video</a>
+            <a href="https://www.youtube.com/watch?v=JFsQ0TpCbiw" target="_blank">Konstitutsiya: Modda 55</a>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:12px">
+          <h4 id="manbalar">Rasmiy manbalar</h4>
+          <ul>
+            <li><a href="https://constitution.uz" target="_blank">constitution.uz (raskiy va ingliz)</a></li>
+            <li><a href="https://lex.uz" target="_blank">lex.uz (qonunlar)</a></li>
+            <li><a href="https://www.un.int/uzbekistan/uzbekistan/constitution-republic-uzbekistan" target="_blank">BMT sahifasi (tarix)</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="card" style="margin-top:18px">
+      <small>Manbalar: constitution.uz, lex.uz, YouTube. Sayt materiallaridan foydalanilganda manbalarni ko'rsatish talab qilinadi.</small>
+    </footer>
+  </main>
+
+  <script>
+    // Lottie animation init (o'zingiz xohlagan animation.json URL bilan almashtiring)
+    const anim = lottie.loadAnimation({
+      container: document.getElementById('lottie'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json' // demo
+    });
+
+    // Simple client-side search (maqolalar va sahifa ichidagi matnlar uchun)
+    function doSearch(){
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      if(!q){ alert('Iltimos, qidiruv soʻzini kiriting'); return; }
+      // highlight articles matching
+      const items = document.querySelectorAll('#articles .article');
+      let found = false;
+      items.forEach(it=>{
+        const txt = it.textContent.toLowerCase();
+        if(txt.includes(q)){ it.style.borderColor = '#cfe8ff'; it.style.background = '#f6fbff'; found=true; }
+        else{ it.style.borderColor = '#eef3fc'; it.style.background = 'white'; }
+      });
+      if(!found) alert('Hech narsa topilmadi. Rasmiy matnni tekshiring (Manbalar bo‘limi).');
+    }
+  </script>
+</body>
+</html>
