@@ -11,17 +11,17 @@
 
     #intro{position:fixed;top:0;left:0;width:100%;height:100vh;background:#0b1220;
       display:flex;align-items:center;justify-content:center;flex-direction:column;
-      z-index:9999;color:white;animation:introFadeOut 1.4s ease 3.5s forwards;}
+      z-index:9999;color:white;animation:introFadeOut 1.4s ease 6s forwards;}
     @keyframes introFadeOut{to{opacity:0;visibility:hidden}}
 
     .intro-text{font-size:32px;font-weight:700;opacity:0;animation:popUp 1s forwards}
     .intro-sub{font-size:18px;margin-top:10px;opacity:0;animation:popUp 1s .6s forwards}
-    .intro-info{margin-top:20px;opacity:0;animation:fadeInInfo 1s 1.2s forwards; text-align:center; max-width:400px;}
+    .intro-info{margin-top:20px;opacity:0;animation:fadeInInfo 1s 1.2s forwards; text-align:center; max-width:400px; line-height:1.6;}
     @keyframes popUp{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
     @keyframes fadeInInfo{to{opacity:1}}
 
     header{background:linear-gradient(90deg,#ffffff,#eef6ff);padding:20px;
-      border-bottom:1px solid #e6eef8;opacity:0;animation:fadeIn .9s 4s forwards;}
+      border-bottom:1px solid #e6eef8;opacity:0;animation:fadeIn .9s 6.5s forwards;}
     @keyframes fadeIn{to{opacity:1}}
 
     .container{max-width:1100px;margin:20px auto;padding:0 16px}
@@ -37,7 +37,7 @@
 
     h1{margin:0;font-size:24px;overflow:hidden;white-space:nowrap;
       border-right:3px solid var(--accent);width:0;
-      animation:typewriter 2s steps(30) forwards 4s, blink .75s step-end infinite 4s;}
+      animation:typewriter 2s steps(30) forwards 6.5s, blink .75s step-end infinite 6.5s;}
     @keyframes typewriter{from{width:0}to{width:260px}}
     @keyframes blink{50%{border-color:transparent}}
 
@@ -85,7 +85,17 @@
     7) Bolalar huquqlari himoyalangan.<br>
     8) Ayollar va yoshlar huquqlari belgilangan.<br>
     9) Millatlar va diniy erkinlik kafolatlangan.<br>
-    10) Davlat tili — o‘zbek tili.
+    10) Davlat tili — o‘zbek tili.<br>
+    11) Konstitutsiyada davlat ramzlari va gerb haqida ham mavjud.<br>
+    12) Barcha fuqarolar teng huquqlarga ega.<br>
+    13) Hududiy birliklar va viloyatlar taqsimoti.<br>
+    14) Davlat xavfsizligi kafolatlangan.<br>
+    15) Iqtisodiy va moliyaviy huquqlar belgilangan.<br>
+    16) Atrof-muhit va tabiiy resurslar himoyasi.<br>
+    17) Ta'lim va ilm-fan rivoji kafolatlangan.<br>
+    18) Madaniy meros va tilni saqlashga oid qoidalar.<br>
+    19) Sud qarorlari va apellyatsiya tartibi.<br>
+    20) Konstitutsiyani o‘zgartirish va to‘g‘rilash tartibi.
   </div>
 </div>
 
@@ -181,8 +191,6 @@
   const observer = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("show"); }); },{threshold:0.2});
   document.querySelectorAll('.card, .section').forEach(el=>{ observer.observe(el); });
 </script>
-
-  <h1>Andijon viloyati baliqchi tumani 12-dimiyning "6-b" - sinf o'quvchisi : Abdulazizov Husanboyning konsitutsiya uchun tayorlagan web sitesi</h1>
+<h1>Andijon viloyati Baliqchi tumani 12-dimiyning "6-b"-sinf o'quvchisi Abdulazizov Husanboyning o'zbekiston konsitutsiyasiga yasagan web-sayti </h1>
 </body>
 </html>
-
