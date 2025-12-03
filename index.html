@@ -6,96 +6,41 @@
   <title>O‘zbekiston Konstitutsiyasi — Ma'lumotlar va Videolar</title>
 
   <style>
-    :root{--accent:#0b5cff;--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2}
-    body{font-family:Inter,system-ui;background:#f6f8fb;color:#0b1220;margin:0;overflow-x:hidden;}
-
-    #intro{position:fixed;top:0;left:0;width:100%;height:100vh;background:#0b1220;
-      display:flex;align-items:center;justify-content:center;flex-direction:column;
-      z-index:9999;color:white;animation:introFadeOut 1.4s ease 6s forwards;}
-    @keyframes introFadeOut{to{opacity:0;visibility:hidden}}
-
-    .intro-text{font-size:32px;font-weight:700;opacity:0;animation:popUp 1s forwards}
-    .intro-sub{font-size:18px;margin-top:10px;opacity:0;animation:popUp 1s .6s forwards}
-    .intro-info{margin-top:20px;opacity:0;animation:fadeInInfo 1s 1.2s forwards; text-align:center; max-width:400px; line-height:1.6;}
-    @keyframes popUp{0%{transform:scale(.5);opacity:0}100%{transform:scale(1);opacity:1}}
-    @keyframes fadeInInfo{to{opacity:1}}
-
-    header{background:linear-gradient(90deg,#ffffff,#eef6ff);padding:20px;
-      border-bottom:1px solid #e6eef8;opacity:0;animation:fadeIn .9s 6.5s forwards;}
-    @keyframes fadeIn{to{opacity:1}}
-
-    .container{max-width:1100px;margin:20px auto;padding:0 16px}
-    .grid{display:grid;grid-template-columns:1fr 360px;gap:20px}
-
-    .card{background:white;border-radius:12px;padding:18px;
-      box-shadow:0 6px 18px rgba(13,37,63,.06);
-      transition:.3s ease;
-      transform:translateY(20px);opacity:0;
-    }
-    .card.show{transform:translateY(0);opacity:1;}
-    .card:hover{transform:translateY(-5px);box-shadow:0 12px 28px rgba(13,37,63,.12);}
-
-    h1{margin:0;font-size:24px;overflow:hidden;white-space:nowrap;
-      border-right:3px solid var(--accent);width:0;
-      animation:typewriter 2s steps(30) forwards 6.5s, blink .75s step-end infinite 6.5s;}
-    @keyframes typewriter{from{width:0}to{width:260px}}
-    @keyframes blink{50%{border-color:transparent}}
-
-    nav{display:flex;gap:12px;margin-top:8px}
-    nav a{color:var(--accent);text-decoration:none;font-weight:600;transition:.2s}
-    nav a:hover{color:#003cff}
-
-    .search input{flex:1;padding:10px;border-radius:8px;border:1px solid #dbe7ff;
-      transition:.3s;}
-    .search input:focus{border-color:#0b5cff;box-shadow:0 0 0 3px #cfe1ff}
-
-    .lottie-wrap{width:160px;height:160px;opacity:0;transform:scale(.6);
-      animation:popIn .9s .4s forwards ease-out;}
-    @keyframes popIn{to{opacity:1;transform:scale(1)}}
-
-    .section{opacity:0;transform:translateY(25px);transition:.6s ease;}
-    .section.show{opacity:1;transform:translateY(0)}
-
-    iframe{transition:.3s;border-radius:12px}
-    iframe:hover{transform:scale(1.02)}
-
-    .article{padding:12px;border-radius:8px;border:1px solid #eef3fc;margin-bottom:8px;
-      transition:.3s;}
-    .article:hover{background:#f3f8ff;border-color:#cfe0ff;}
-
-    footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
+    body { font-family: Inter, system-ui; background: #f6f8fb; color: #0b1220; margin: 0; overflow-x: hidden; }
+    #intro { position: fixed; top:0; left:0; width:100%; height:100vh; background:#0b1220; display:flex; flex-direction:column; justify-content:center; align-items:center; color:white; opacity:1; transition: opacity 1s ease; }
+    .intro-text, .intro-sub, .intro-info { margin: 10px 0; opacity: 1; transition: opacity 1s ease; text-align: center; }
+    header { background: linear-gradient(90deg,#ffffff,#eef6ff); padding:20px; border-bottom:1px solid #e6eef8; }
+    .container { max-width:1100px; margin:20px auto; padding:0 16px; }
+    .grid { display:grid; grid-template-columns:1fr 360px; gap:20px; }
+    .card { background:white; border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(13,37,63,.06); transition:.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow:0 12px 28px rgba(13,37,63,.12); }
+    h1 { margin:0; font-size:24px; }
+    nav { display:flex; gap:12px; margin-top:8px; }
+    nav a { color:#0b5cff; text-decoration:none; font-weight:600; }
+    nav a:hover { color:#003cff; }
+    .search input { flex:1; padding:10px; border-radius:8px; border:1px solid #dbe7ff; }
+    .search input:focus { border-color:#0b5cff; box-shadow:0 0 0 3px #cfe1ff; }
+    .section { opacity:1; margin-top:20px; }
+    iframe { border-radius:12px; width:100%; height:200px; }
+    .article { padding:12px; border-radius:8px; border:1px solid #eef3fc; margin-bottom:8px; }
+    .article:hover { background:#f3f8ff; border-color:#cfe0ff; }
+    footer { padding:18px; text-align:center; color:#9aa4b2; font-size:13px; }
   </style>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 </head>
 
 <body>
-
 <div id="intro">
-  <div id="introAnim" style="width:200px;height:200px"></div>
   <div class="intro-text">O‘zbekiston Konstitutsiyasi</div>
   <div class="intro-sub">Ma'lumotlar, modda izohlari va videolar</div>
   <div class="intro-info">
     1) 1992-yil 8-dekabrda qabul qilingan.<br>
     2) 5 bo‘lim, 26 bob va 155 modda.<br>
     3) Fuqarolarning huquqlari kafolatlangan.<br>
-    4) Prezident davlat boshlig‘i hisoblanadi.<br>
-    5) Oliy Majlis 2 palatadan iborat.<br>
-    6) Sud hokimiyati mustaqil.<br>
-    7) Bolalar huquqlari himoyalangan.<br>
-    8) Ayollar va yoshlar huquqlari belgilangan.<br>
-    9) Millatlar va diniy erkinlik kafolatlangan.<br>
-    10) Davlat tili — o‘zbek tili.<br>
-    11) Konstitutsiyada davlat ramzlari va gerb haqida ham mavjud.<br>
-    12) Barcha fuqarolar teng huquqlarga ega.<br>
-    13) Hududiy birliklar va viloyatlar taqsimoti.<br>
-    14) Davlat xavfsizligi kafolatlangan.<br>
-    15) Iqtisodiy va moliyaviy huquqlar belgilangan.<br>
-    16) Atrof-muhit va tabiiy resurslar himoyasi.<br>
-    17) Ta'lim va ilm-fan rivoji kafolatlangan.<br>
-    18) Madaniy meros va tilni saqlashga oid qoidalar.<br>
-    19) Sud qarorlari va apellyatsiya tartibi.<br>
+    ...<br>
     20) Konstitutsiyani o‘zgartirish va to‘g‘rilash tartibi.
+  </div>
+  <div class="intro-author">
+    Andijon viloyati Baliqchi tumani 12-dimiyning "6-b"-sinf o'quvchisi <strong>Abdulazizov Husanboy</strong>
   </div>
 </div>
 
@@ -113,20 +58,15 @@
 
 <main class="container">
   <div class="grid">
-
     <section class="card content">
       <div class="hero section">
-        <div style="flex:1">
-          <h2>Tezkor kirish</h2>
-          <p>Konstitutsiyaning to‘liq matni, tahlillar va videolar.</p>
-          <div class="search">
-            <input id="q" placeholder="Modda yoki so‘z bo‘yicha qidirish..." />
-            <button onclick="doSearch()">Qidirish</button>
-          </div>
+        <h2>Tezkor kirish</h2>
+        <p>Konstitutsiyaning to‘liq matni, tahlillar va videolar.</p>
+        <div class="search">
+          <input id="q" placeholder="Modda yoki so‘z bo‘yicha qidirish..." />
+          <button onclick="doSearch()">Qidirish</button>
         </div>
-        <div class="lottie-wrap" id="lottie"></div>
       </div>
-
       <div id="konstitutsiya" class="section">
         <h3>Rasmiy matn va PDF</h3>
         <ul>
@@ -135,7 +75,6 @@
           <li><a href="https://lex.uz" target="_blank">Lex.uz</a></li>
         </ul>
       </div>
-
       <div id="maqolalar" class="section">
         <h3>Maqolalar</h3>
         <div class="article">Fuqarolik huquqlari — Asosiy huquqlar sharhi.</div>
@@ -147,17 +86,13 @@
     <aside>
       <div class="card section">
         <h3 id="videolar">YouTube panel</h3>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden">
-          <iframe src="https://www.youtube.com/embed/AlAd12SEKO8?list=RDAlAd12SEKO8" allowfullscreen frameborder="0" style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-        </div>
-
+        <iframe src="https://www.youtube.com/embed/AlAd12SEKO8?list=RDAlAd12SEKO8" allowfullscreen></iframe>
         <h4>Boshqa videolar</h4>
         <div class="yt-grid">
           <a href="https://www.youtube.com/embed/OBuLL1NuF4Y" target="_blank">Bosh qism</a>
           <a href="https://www.youtube.com/embed/JFsQ0TpCbiw" target="_blank">Modda 55</a>
         </div>
       </div>
-
       <div class="card section">
         <h4 id="manbalar">Manbalar</h4>
         <ul>
@@ -174,23 +109,21 @@
 </main>
 
 <script>
-  lottie.loadAnimation({ container: document.getElementById('introAnim'), renderer: 'svg', loop: true, autoplay: true, path: 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json' });
-  lottie.loadAnimation({ container: document.getElementById('lottie'), renderer: 'svg', loop: true, autoplay: true, path: 'https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json' });
-
   function doSearch() {
     const q = document.getElementById('q').value.toLowerCase();
     const items = document.querySelectorAll('.article');
     let found = false;
     items.forEach(it => {
       const t = it.textContent.toLowerCase();
-      if(t.includes(q)){ it.style.background="#eaf4ff"; found = true; } else { it.style.background="white"; }
+      it.style.background = t.includes(q) ? "#eaf4ff" : "white";
+      if(t.includes(q)) found = true;
     });
     if(!found) alert("Hech narsa topilmadi");
   }
 
-  const observer = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add("show"); }); },{threshold:0.2});
-  document.querySelectorAll('.card, .section').forEach(el=>{ observer.observe(el); });
+  // Intro fade out after 4 seconds
+  setTimeout(()=>{ document.getElementById('intro').style.opacity='0'; setTimeout(()=>{ document.getElementById('intro').style.display='none'; },1000); },4000);
 </script>
-<h1>Andijon viloyati Baliqchi tumani 12-dimiyning "6-b"-sinf o'quvchisi Abdulazizov Husanboyning o'zbekiston konsitutsiyasiga yasagan web-sayti </h1>
+<h1>Andijon viloyati Baliqchi tumani 12-dimiyning "6-b"-sinf o'quvchisi Abdulazizov Husanboyning O'zbekiston Konstitutsiyasi tayorlagan web-sayti</h1>
 </body>
 </html>
